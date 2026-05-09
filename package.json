@@ -1,0 +1,29 @@
+{
+  "name": "claudio",
+  "version": "1.0.0",
+  "description": "Personal AI radio station - reads your NetEase playlists, picks songs like a DJ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "ai",
+    "radio",
+    "dj",
+    "netease"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
+    "better-sqlite3": "^12.9.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "msedge-tts": "^2.0.5",
+    "NeteaseCloudMusicApi": "^4.31.0",
+    "ws": "^8.20.0"
+  }
+}

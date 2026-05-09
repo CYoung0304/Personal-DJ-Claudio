@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# runtime data
+data/
+cache/
+
+# secrets
+.env
+.env.local
+
+# personal user profile (use the .example files as templates)
+user/taste.md
+user/routines.md
+user/mood-rules.md
+user/playlists.json
+
+# generated audio / test files
+*.mp3
+*.bin
+!public/**/*.mp3
+
+# rogue npm cache that gets created when %USERPROFILE% fails to expand on Windows
+%USERPROFILE%/
+
+# editor / OS
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db

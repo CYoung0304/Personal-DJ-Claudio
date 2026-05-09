@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Claudio - AI Radio</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation -->
+    <nav id="nav">
+      <button class="nav-btn active" data-view="player">Player</button>
+      <button class="nav-btn" data-view="profile">Profile</button>
+      <button class="nav-btn" data-view="settings">Settings</button>
+    </nav>
+
+    <!-- Player View -->
+    <div id="view-player" class="view active">
+      <div id="album-art-container">
+        <div id="album-art">
+          <div id="album-placeholder">Claudio</div>
+          <img id="album-img" alt="" style="display:none">
+        </div>
+      </div>
+
+      <div id="song-info">
+        <div id="song-title">Waiting for DJ...</div>
+        <div id="song-artist"></div>
+      </div>
+
+      <div id="progress-container">
+        <div id="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="time-display">
+          <span id="time-current">0:00</span>
+          <span id="time-total">0:00</span>
+        </div>
+      </div>
+
+      <div id="controls">
+        <button id="btn-prev" class="ctrl-btn" title="Previous">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button id="btn-play" class="ctrl-btn ctrl-main" title="Play">
+          <svg id="icon-play" viewBox="0 0 24 24" width="32" height="32"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+          <svg id="icon-pause" viewBox="0 0 24 24" width="32" height="32" style="display:none"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button id="btn-next" class="ctrl-btn" title="Next">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+
+      <div id="dj-message">
+        <div id="dj-avatar">DJ</div>
+        <div id="dj-say"></div>
+      </div>
+
+      <div id="chat-container">
+        <input id="chat-input" type="text" placeholder="Tell the DJ what you're doing..." autocomplete="off">
+        <button id="chat-send">Send</button>
+      </div>
+
+      <div id="queue-section">
+        <h3>Up Next</h3>
+        <ul id="queue-list"></ul>
+      </div>
+    </div>
+
+    <!-- Profile View -->
+    <div id="view-profile" class="view">
+      <h2>Taste Profile</h2>
+      <div class="profile-section">
+        <h3>Music Taste</h3>
+        <textarea id="taste-editor" rows="12"></textarea>
+      </div>
+      <div class="profile-section">
+        <h3>Daily Routines</h3>
+        <textarea id="routines-editor" rows="12"></textarea>
+      </div>
+      <div class="profile-section">
+        <h3>Mood Rules</h3>
+        <textarea id="mood-rules-editor" rows="12"></textarea>
+      </div>
+      <button id="save-profile" class="btn-primary">Save Profile</button>
+    </div>
+
+    <!-- Settings View -->
+    <div id="view-settings" class="view">
+      <h2>Settings</h2>
+
+      <div class="settings-section">
+        <h3>Playlists</h3>
+        <div id="playlist-list"></div>
+        <div class="playlist-add">
+          <input id="playlist-id-input" type="number" placeholder="NetEase Playlist ID">
+          <input id="playlist-name-input" type="text" placeholder="Playlist Name">
+          <button id="add-playlist" class="btn-primary">Add</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Today's Plan</h3>
+        <div id="today-plan"></div>
+        <button id="generate-plan" class="btn-primary">Regenerate Plan</button>
+      </div>
+
+      <div class="settings-section">
+        <h3>API Status</h3>
+        <div id="api-status">
+          <div class="status-item">
+            <span>Server</span>
+            <span id="status-server" class="status-dot"></span>
+          </div>
+          <div class="status-item">
+            <span>NetEase</span>
+            <span id="status-ncm" class="status-dot"></span>
+          </div>
+          <div class="status-item">
+            <span>Claude</span>
+            <span id="status-claude" class="status-dot"></span>
+          </div>
+          <div class="status-item">
+            <span>TTS</span>
+            <span id="status-tts" class="status-dot off"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>Play History</h3>
+        <ul id="history-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-player" preload="auto"></audio>
+  <script src="/app.js"></script>
+</body>
+</html>

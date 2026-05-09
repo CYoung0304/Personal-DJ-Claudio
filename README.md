@@ -47,7 +47,7 @@ Claudio 不是一个普通的播放器。它是一个**有人格的 DJ**：
 ### 2. 安装
 
 ```bash
-git clone https://github.com/<your-name>/claudio.git
+git clone https://github.com/CYoung0304/Personal-DJ-Claudio.git
 cd claudio
 npm install
 ```

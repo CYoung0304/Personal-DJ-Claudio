@@ -18,6 +18,8 @@ Claudio 不是一个普通的播放器。它是一个**有人格的 DJ**：
 - 📱 **PWA，手机也能用** — 加到主屏跟原生 app 体验一样
 - 🆓 **可以零成本跑起来** — DeepSeek（极便宜）+ Edge TTS（完全免费）
 
+<img width="1792" height="1024" alt="微信图片_20260514170049_136_35" src="https://github.com/user-attachments/assets/fe4ea2d0-ddae-466f-8597-30c90f86110c" />
+
 ---
 
 ## 效果展示
